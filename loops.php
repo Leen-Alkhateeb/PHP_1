@@ -77,3 +77,33 @@ for ($i = 1; $i <= 6; $i++) {              // 6 صفوف
     echo "</tr>";
 }
 echo "</table>";
+
+
+
+// 1. Fibonacci with a for loop
+$n = 10; $a = 0; $b = 1; $out = [];
+for ($i = 0; $i < $n; $i++) {
+    $out[] = $a;
+    [$a, $b] = [$b, $a + $b];
+}
+echo implode(', ', $out) . ', ...';
+
+// 2. Floyd's triangle
+$n = 5; $num = 1;
+for ($i = 1; $i <= $n; $i++) {
+    for ($j = 1; $j <= $i; $j++) echo $num++ . ' ';
+    echo "<br>";
+}
+//Task2
+// 3. Diamond pattern A..E
+$n = 5;
+echo "<pre>";
+for ($i = 1; $i <= 2 * $n - 1; $i++) {
+    $row = $i <= $n ? $i : 2 * $n - $i;
+    echo str_repeat(' ', $n - $row);
+    for ($j = 0; $j < $row; $j++) echo chr(65 + $j) . ' ';
+    echo "\n";
+}
+echo "</pre>";
+
+?>
